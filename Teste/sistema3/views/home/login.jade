@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+	form(method="POST", action="/", class="form-login")
+		h3 Acesso ao sistema
+		p Informe os dados para acesso.
+		if messages.erro
+			br
+			div(class="alert alert-danger")
+				each msg in messages.erro
+					b=msg
+					br
+
+		div(class="form-group")
+			label Email
+			input(type="email", class="form-control" placeholder="Email" name="email" autofocus, required)
+
+		div(class="form-group")
+			label Senha
+			input(type="password", class="form-control" placeholder="Senha" name="password", required)
+
+		button(type="submit", class="btn btn-primary") Entrar
+	
