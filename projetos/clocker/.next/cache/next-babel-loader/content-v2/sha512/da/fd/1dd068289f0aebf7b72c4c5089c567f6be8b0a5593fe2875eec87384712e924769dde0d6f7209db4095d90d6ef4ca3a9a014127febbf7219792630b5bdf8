@@ -1,0 +1,1 @@
+{"ast":null,"code":"import logo from './logo.svg';\nexport const Logo = logo;","map":{"version":3,"sources":["/home/nil/projetos/clocker/components/Logo/index.js"],"names":["logo","Logo"],"mappings":"AAAA,OAAOA,IAAP,MAAiB,YAAjB;AAEA,OAAO,MAAMC,IAAI,GAAGD,IAAb","sourcesContent":["import logo from './logo.svg'\n\nexport const Logo = logo"]},"metadata":{},"sourceType":"module"}
