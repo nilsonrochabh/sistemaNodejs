@@ -26,7 +26,7 @@ const validationSchema = yup.object().shape({
 })
 
 export default function Home() {
-  const  [auth, {singnup}] = useAuth()
+  const  [auth, {signup}] = useAuth()
   const router = useRouter()
   const {
     values,
@@ -38,7 +38,7 @@ export default function Home() {
     handleSubmit,
     isSubmitting
   } = useFormik({
-    onSubmit: singnup,
+    onSubmit: signup,
     validationSchema,
     initialValues: {
       email: '',
@@ -50,6 +50,7 @@ export default function Home() {
   useEffect(() =>{
     auth.user && router.push('/agenda')
   },[auth.user])
+
   return (
     <Container p={4} centerContent>
       <Logo />
