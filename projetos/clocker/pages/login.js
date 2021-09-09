@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
@@ -16,17 +16,15 @@ import {
 } from '@chakra-ui/react'
 
 import { Logo, useAuth } from './../components'
- 
 
 const validationSchema = yup.object().shape({
     email: yup.string().email('E-mail inválido').required('Preenchimento obrigatório'),
     password: yup.string().required('Preenchimento obrigatório'),
 })
 
-export default function Login(){
-    const [auth,{login}] = useAuth()
+export default function Login() {
+    const [auth, { login }] = useAuth()
     const router = useRouter()
-
 
     const {
         values,
@@ -45,9 +43,11 @@ export default function Login(){
             password: ''
         }
     })
-    useEffect(() =>{
+
+    useEffect(() => {
         auth.user && router.push('/agenda')
-      },[auth.user])
+    }, [auth.user])
+
     return (
         <Container p={4} centerContent>
             <Logo />
